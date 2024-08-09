@@ -1,5 +1,5 @@
 # SiPHP
-Simple PHP with Sqlite database
+Simple PHP with Sqlite database and Feature Driven directory.
 
 clone repository
 ```
