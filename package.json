@@ -1,0 +1,25 @@
+{
+  "name": "siphp",
+  "version": "1.0.0",
+  "description": "Simple PHP with Sqlite database and Feature Driven directory.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./assets/style.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehanaf/siphp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rehanaf/siphp/issues"
+  },
+  "homepage": "https://github.com/rehanaf/siphp#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "tailwindcss": "^3.4.9"
+  }
+}

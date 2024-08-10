@@ -47,7 +47,7 @@ class App
             $url = explode('/', $url);
             return $url;
         } else {
-            return ['Home'];
+            return ['home'];
         }
     }
 }
