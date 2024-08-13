@@ -1,7 +1,7 @@
 <?php
 
 function url($path = '') {
-    return 'http://localhost/siphp/'. $path;
+    return BASE_URL. $path;
 }
 
 function redirect($to = '') {
@@ -26,8 +26,10 @@ function verify($data, $expected) {
 
 function auth($args = false) {
     if (isset($_SESSION['login'])) {
-        $user = Db::read('users', ['email' => $_SESSION['email']]);
-        $res = password_verify($_SESSION['password'], $user[0]['password']);
+        $user = Db::read('users', ['email' => $_SESSION['email']])[0];
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['id'] = $user['id'];
+        $res = password_verify($_SESSION['password'], $user['password']);
         if ($args) {
             if ($res) {
                 redirect(isset($args['redirect']) ? $args['redirect'] : 'dashboard');

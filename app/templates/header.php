@@ -12,11 +12,10 @@
 
 <body class="min-h-full">
     <header class="bg-white">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:p-8" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">SiPHP</span>
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                    <span class="font-bold text-xl text-indigo-600">SiPHP</span>
                 </a>
             </div>
             <div class="flex lg:flex-1 lg:justify-end">
@@ -29,19 +28,25 @@
         </nav>
     </header>
     <?php Flasher::flash(); ?>
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <div class="border-b border-gray-200">
             <nav class="-mb-px flex gap-6" aria-label="Tabs">
                 <a
-                    href="#"
-                    class="shrink-0 border-b-2 border-indigo-600 px-1 pb-4 text-sm font-medium text-indigo-600">
+                    href="<?=url('dashboard')?>"
+                    class="shrink-0 border-b-2 px-1 pb-4 text-sm font-medium <?=($data['page'] == 'dashboard' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700')?>">
                     Dashboard
                 </a>
 
                 <a
-                    href="#"
-                    class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    href="<?=url('users')?>"
+                    class="shrink-0 border-b-2 px-1 pb-4 text-sm font-medium <?=($data['page'] == 'users' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700')?>">
                     Users
+                </a>
+
+                <a
+                    href="<?=url('blog')?>"
+                    class="shrink-0 border-b-2 px-1 pb-4 text-sm font-medium <?=($data['page'] == 'blog' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700')?>">
+                    Blog
                 </a>
             </nav>
         </div>

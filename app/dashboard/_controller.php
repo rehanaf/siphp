@@ -1,14 +1,13 @@
 <?php 
 
 class Dashboard extends Controller {
-    public function __construct() {
+    public function index()
+    {
         if (!auth()) {
             redirect('users/login');
         }
-    }
-    public function index()
-    {
-        $data = Db::read('users');
+        $data['title'] = 'Hii, '. $_SESSION['name'];
+        $data['page'] = 'dashboard';
         $data['login'] = true;
         $this->views('dashboard/index', $data);
     }

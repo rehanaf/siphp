@@ -7,6 +7,8 @@ class Users extends Controller
         if (!auth()) {
             redirect('users/login');
         }
+        $data['title'] = 'List Users';
+        $data['page'] = 'users';
         $data['users'] = Db::read('users');
         $this->views('users/index', $data);
     }
